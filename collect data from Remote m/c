@@ -1,0 +1,13 @@
+# cerner_2^5_2018
+# Program to collect data from Remote m/c 
+
+import os
+import zipfile
+import shutil
+src=r"\\USMXXXXXXX\D$\Jenkins\DSXX\XXXXXX\build\reports"
+print()
+dest = 'C:\log\reports'
+for path, subdirs, files in os.walk(src):
+    for name in files:
+        filename = os.path.join(path, name)
+        shutil.copy2(filename, dest)
